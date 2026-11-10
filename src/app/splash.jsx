@@ -14,7 +14,7 @@ export default function SplashScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.logo}>Amaze GO!</Text>
+      <Text style={styles.logo}>Train Maze Go!</Text>
     </View>
   );
 }
