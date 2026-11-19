@@ -1,9 +1,14 @@
 import { useRouter } from 'expo-router';
+import * as Haptics from 'expo-haptics';
 import { ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native';
 import { colors } from '../constants/theme';
 
 export default function HomeScreen() {
   const router = useRouter();
+  const handlePress = async () => {
+  await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+  router.push('/tabs/levels');
+};
 
   return (
     <ImageBackground
@@ -22,7 +27,7 @@ export default function HomeScreen() {
             styles.playButton,
             pressed && styles.playButtonPressed,
           ]}
-          onPress={() => router.push('/tabs/levels')}
+          onPress={handlePress}
         >
           <Text style={styles.playText}>Play</Text>
         </Pressable>
